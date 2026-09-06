@@ -1,6 +1,6 @@
 {
   "name": "create-xuejp",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "创建的常用模版项目",
   "type": "module",
   "bin": {
@@ -17,7 +17,8 @@
     "test": "node bin/index.js",
     "build": "vite build",
     "dev": "tsx src/cli/index.ts",
-    "urt": "pwsh ./scripts/updateReadmeTemplate.ps1"
+    "urt": "pwsh ./scripts/updateReadmeTemplate.ps1",
+    "pb": "npm version patch && npm publish"
   },
   "author": "xuejiangping",
   "license": "ISC",
