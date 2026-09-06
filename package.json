@@ -1,0 +1,21 @@
+{
+  "name": "create-xuejp",
+  "version": "1.0.5",
+  "description": "使用npm create , 练习创建项目",
+  "type": "module",
+  "bin": {
+    "create-xuejp": "bin/index.js",
+    "xjp": "src/cli/index.ts"
+  },
+  "engines": {
+    "node": ">=17"
+  },
+  "scripts": {
+    "test": "node bin/index.js"
+  },
+  "author": "xuejiangping",
+  "license": "ISC",
+  "dependencies": {
+    "@clack/prompts": "^1.7.0"
+  }
+}
