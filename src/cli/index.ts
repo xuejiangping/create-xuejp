@@ -4,30 +4,29 @@ import {
   spinner,
   text
 } from '@clack/prompts'
-import { mkdir } from 'fs/promises'
-import path from 'path'
-import { copyTemplate, readTemplate } from '../utils'
+import { mkdir } from 'node:fs/promises'
+import { copyTemplate, findTemplateRoot, prompt, readTemplate } from '../utils'
 
-const templateRoot = path.resolve(import.meta.dirname, '../../template/')
+const templateRoot = await findTemplateRoot()
 
 
-const projectName = await text({
+const projectName = await prompt(() => text({
   message: '请输入项目名称',
   placeholder: 'my-project',
   defaultValue: 'my-project',
-
-})
+}))
 
 // const useTypeScript = await confirm({
 //   message: '是否使用 TypeScript？',
 //   initialValue: true
 // })
 
-const templates = await multiselect({
+const templateOptions = await readTemplate(templateRoot)
+const templates = await prompt(() => multiselect({
   message: '请选择模版',
-  options: await readTemplate(templateRoot),
+  options: templateOptions,
   required: true
-})
+}))
 
 // const feature = await select({
 //   message: '请选择功能2',
@@ -47,8 +46,8 @@ loading.start(`正在创建项目 ${String(projectName)}...`)
 * 0o700 // 只有当前用户可访问
 * 0o775 // 所有人可读可执行，所有者和组可写
  */
-await mkdir(<string>projectName, { recursive: false })
-await copyTemplate(<string[]>templates, <string>projectName)
+await mkdir(projectName, { recursive: false })
+await copyTemplate(templates, projectName)
 
 loading.stop('项目创建完成')
 
