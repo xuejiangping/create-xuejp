@@ -1,6 +1,6 @@
 {
   "name": "create-xuejp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "创建的常用模版项目",
   "type": "module",
   "bin": {
