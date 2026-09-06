@@ -142,3 +142,10 @@ vite.config.ts    # Node CLI 构建配置
 - npm、pnpm 或 Yarn
 
 最终用户只需要通过 npm 安装并运行脚手架，不需要单独安装 TypeScript 或 `tsx`。
+
+## 当前已有模版
+
+<!-- templates:start -->
+### [vscode-extension-webview-template](template/vscode-extension-webview-template/README.md)
+### [youhou](template/youhou/README.md)
+<!-- templates:end -->

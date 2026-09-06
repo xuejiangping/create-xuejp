@@ -1,23 +1,23 @@
 {
   "name": "create-xuejp",
   "version": "1.0.5",
-  "description": "使用npm create , 练习创建项目",
+  "description": "创建xuejiangping的常用项目",
   "type": "module",
   "bin": {
-    "create-xuejp": "bin/index.js",
-    "xjp": "src/cli/index.ts"
+    "create-xuejp": "bin/index.js"
   },
   "files": [
     "bin",
-    "template",
-    "src"
+    "template"
   ],
   "engines": {
     "node": ">=17"
   },
   "scripts": {
     "test": "node bin/index.js",
-    "build": "vite build"
+    "build": "vite build",
+    "dev": "tsx src/cli/index.ts",
+    "urt": "pwsh ./scripts/updateReadmeTemplate.ps1"
   },
   "author": "xuejiangping",
   "license": "ISC",
