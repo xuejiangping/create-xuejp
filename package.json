@@ -1,7 +1,7 @@
 {
   "name": "create-xuejp",
   "version": "1.0.5",
-  "description": "创建xuejiangping的常用项目",
+  "description": "创建的常用模版项目",
   "type": "module",
   "bin": {
     "create-xuejp": "bin/index.js"
