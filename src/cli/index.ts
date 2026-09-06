@@ -5,10 +5,10 @@ import {
   text
 } from '@clack/prompts'
 import { mkdir } from 'fs/promises'
+import path from 'path'
 import { copyTemplate, readTemplate } from '../utils'
 
-
-const templateRoot = 'template'
+const templateRoot = path.resolve(import.meta.dirname, '../../template/')
 
 
 const projectName = await text({

@@ -11,11 +11,15 @@
     "node": ">=17"
   },
   "scripts": {
-    "test": "node bin/index.js"
+    "test": "node bin/index.js",
+    "build": "vite build"
   },
   "author": "xuejiangping",
   "license": "ISC",
   "dependencies": {
     "@clack/prompts": "^1.7.0"
+  },
+  "devDependencies": {
+    "vite": "^8.2.2"
   }
 }
