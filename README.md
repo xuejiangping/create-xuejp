@@ -1,6 +1,6 @@
 # create-xuejp
 
-一个基于 Node.js 的交互式项目脚手架。它会读取 `template` 目录中的模板，让用户选择一个或多个模板，并复制到新项目目录。
+一个基于 Node.js 的交互式项目脚手架。它会同时展示 `template` 目录中的本地模板和 `~/.xjprc.yml` 中配置的远程模板，供用户选择并复制到新项目目录。
 
 ## 使用
 
@@ -20,8 +20,8 @@ yarn create xuejp
 执行后，工具会依次：
 
 1. 询问项目目录名称
-2. 展示 `template` 下可用的模板目录
-3. 将选中的模板复制到项目目录
+2. 展示 `template` 下的本地模板和 `~/.xjprc.yml` 中配置的远程模板
+3. 仅下载被选中的远程模板，再将选中模板复制到项目目录
 
 例如，模板目录如下：
 
@@ -45,6 +45,23 @@ template/
 ├── a/
 └── b/
 ```
+
+### 配置远程模板
+
+在用户主目录创建 `~/.xjprc.yml`：
+
+```yaml
+templates:
+  server: https://gitee.com/example/server.git
+  web: https://example.com/web-template.zip
+  mobile:
+    type: git
+    url: https://gitee.com/example/mobile.git
+```
+
+配置项可以是 URL 字符串，也可以是包含 `type` 和 `url` 的对象。字符串 URL 以 `.zip` 结尾时按 ZIP 模板处理，其他 URL 按 Git 仓库处理；对象中的 `type` 可显式指定为 `git` 或 `zip`。选择多个模板时，复制结果会使用模板名作为目录名；本地和远程模板重名时会分别加上 `local-` 和 `remote-` 前缀。
+
+ZIP 模板会解压后复制；压缩包可以包含一个顶层目录，也可以直接包含模板文件。没有配置文件时，CLI 仍可正常展示和使用本地模板。
 
 在交互过程中按 `Ctrl+C` 可以安全退出。
 

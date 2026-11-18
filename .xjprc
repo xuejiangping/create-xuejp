@@ -1,0 +1,6 @@
+templates:
+  aa: https://gitee.com/xue6474/xue-server.git
+  bb: http://www.demo.com/bb.zip
+  cc:
+    type: git
+    url: https://gitee.com/xue6474/xue-server.git

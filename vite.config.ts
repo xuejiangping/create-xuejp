@@ -17,7 +17,7 @@ const removeShebang = (): Plugin => ({
 export default defineConfig({
   plugins: [removeShebang()],
   ssr: {
-    noExternal: ['@clack/prompts']
+    noExternal: true
   },
   build: {
     ssr: 'src/cli/index.ts',

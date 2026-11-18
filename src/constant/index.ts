@@ -1,0 +1,1 @@
+export const XJPRC_CONFIG_FILE = '.xjprc'
