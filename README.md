@@ -1,6 +1,6 @@
 # create-xuejp
 
-一个基于 Node.js 的交互式项目脚手架。它会同时展示 `template` 目录中的本地模板和 `~/.xjprc.yml` 中配置的远程模板，供用户选择并复制到新项目目录。
+一个基于 Node.js 的交互式项目脚手架。它会同时展示 `template` 目录中的本地模板和 `~/.xuejprc` 中配置的远程模板，供用户选择并复制到新项目目录。
 
 ## 使用
 
@@ -20,7 +20,7 @@ yarn create xuejp
 执行后，工具会依次：
 
 1. 询问项目目录名称
-2. 展示 `template` 下的本地模板和 `~/.xjprc.yml` 中配置的远程模板
+2. 展示 `template` 下的本地模板和 `~/.xuejprc` 中配置的远程模板
 3. 仅下载被选中的远程模板，再将选中模板复制到项目目录
 
 例如，模板目录如下：
@@ -48,7 +48,7 @@ template/
 
 ### 配置远程模板
 
-在用户主目录创建 `~/.xjprc.yml`：
+在用户主目录创建 `~/.xuejprc`：
 
 ```yaml
 templates:
@@ -163,6 +163,9 @@ vite.config.ts    # Node CLI 构建配置
 ## 当前已有模版
 
 <!-- templates:start -->
+
 ### [vscode-extension-webview-template](template/vscode-extension-webview-template/README.md)
+
 ### [youhou](template/youhou/README.md)
+
 <!-- templates:end -->
